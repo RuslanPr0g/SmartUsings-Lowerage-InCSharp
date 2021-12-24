@@ -33,6 +33,6 @@ static async Task DoWorkSimplifiedVersion(int mills)
 {
     // Our custom high level customization for lowering during the compilation time:
 
-    await Task.Delay(mills);
     using var _ = new CustomLogger().TimedOperation("DoWord() completed!");
+    await Task.Delay(mills);
 }
