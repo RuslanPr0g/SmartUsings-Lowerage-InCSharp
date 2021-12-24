@@ -33,6 +33,7 @@ static async Task DoWorkSimplifiedVersion(int mills)
 {
     // Our custom high level customization for lowering during the compilation time:
 
+    // using must be higher than other code, because the scope starts here and ends where the method ends
     using var _ = new CustomLogger().TimedOperation("DoWord() completed!");
     await Task.Delay(mills);
 }
