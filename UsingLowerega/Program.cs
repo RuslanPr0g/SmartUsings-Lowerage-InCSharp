@@ -1,4 +1,7 @@
-﻿using System.Diagnostics;
+﻿using Microsoft.Extensions.Logging;
+using System.Diagnostics;
+using UsingLowerage;
+using UsingLowerage.Extentions;
 
 /// <summary>
 /// Checkout how USING keyword for the IDisposable intefrace is lowered, 
@@ -30,5 +33,5 @@ static async Task DoWorkSimplifiedVersion(int mills)
 {
     // Our custom high level customization for lowering during the compilation time:
 
-    
+    using var _ = new CustomLogger().TimedOperation("DoWord() completed!");
 }
